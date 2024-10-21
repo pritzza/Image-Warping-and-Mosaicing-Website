@@ -177,7 +177,7 @@
             <h2 id="Warping">Image Warping</h2>
             <h3>Implementation</h3>
             <p>
-                Once the homography is computed, the next step is to warp one image to align with another. The <code>warp_image</code> function in <code>warp_img.py</code> implements inverse warping for this purpose. It computes the inverse of the homography matrix and, for each pixel in the output image, calculates the corresponding location in the input image. To ensure all warped content is captured in the output image, we implement a helper method <code>compute_warped_image_bb</code> which calculates the bounding box and displacement of the warped image by transforming the corners of the original image.
+                Once the homography is computed, we want to warp one image to align with another in the same image plane. The <code>warp_image</code> function in <code>warp_img.py</code> implements inverse warping for this purpose. It computes the inverse of the homography matrix and, for each pixel in the output image, calculates the corresponding location in the input image. To ensure all warped content is captured in the output image, we implement a helper method <code>compute_warped_image_bb</code> which calculates the bounding box and displacement of the warped image by transforming the corners of the original image.
             </p>
 
             <h3>Results</h3>
@@ -199,7 +199,7 @@
             <h2 id="Rectification">Image Rectification</h2>
             <h3>Implementation</h3>
             <p>
-                Image rectification serves as a benchmark for the success of our homography calculations and image warping implementations. Our rectify_image function in rectify.py demonstrates this process by taking an input image, a set of points defining a rectangular object in the image, and the desired dimensions of the rectified object. It computes a homography between these points and a predefined rectangular grid, then applies this homography to warp the entire image. This process effectively simulates rotating the camera to point directly at the planar surface, removing perspective distortion. Successful rectification results in an image where the selected object appears as a rectangle, verifying that our homography and warping functions work.
+                Image rectification serves as a benchmark for the success of our homography calculations and image warping implementations. Our <code>rectify_image</code> function in <code>rectify.py</code> demonstrates this process by taking an input image, a set of points defining a rectangular object in the image, and the desired dimensions of the rectified object. It computes a homography between these points and a predefined rectangular grid, then applies this homography to warp the entire image. This process effectively simulates rotating the camera to point directly at the planar surface, removing perspective distortion. Successful rectification results in an image where the selected object appears as a rectangle, verifying that our homography and warping functions work.
             </p>
 
             <h3>Results</h3>
@@ -216,7 +216,7 @@
 
                 <div class="render-gallery-item">
                     <img src="images/4/insane_points.png" alt="Captcha Image with Points" width="200px">
-                    <p class="caption">Insane Captcha</p>
+                    <p class="caption">An Insane Captcha</p>
                 </div>
                 <div class="render-gallery-item">
                     <img src="images/4/insane_rectified.png" alt="Rectified Captcha Image" width="200px">
@@ -267,6 +267,9 @@
             <h2>Conclusion</h2>
             <p>
                 This project provided valuable hands-on experience with fundamental techniques in computational photography and computer vision. By implementing homography computation, image warping, and basic blending, we gained practical insight into the challenges and intricacies of creating panoramic images from multiple photographs.
+            </p>
+            <p>
+            To be continued...
             </p>
         </div>
     </div>
